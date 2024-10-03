@@ -7,7 +7,7 @@ import avatarImg from '../../../assets/images/placeholder.jpg'
 import HostModal from '../../Modal/HostRequestModal'
 import useAxiosSecure from '../../../hooks/useAxiosSecure'
 import toast from 'react-hot-toast'
-import logo from '../../../assets/images/plane.jpg'
+import logo from '../../../assets/images/plane.png'
 
 const Navbar = () => {
   const axiosSecure = useAxiosSecure()
@@ -19,6 +19,7 @@ const Navbar = () => {
   const closeModal = () => {
     setIsModalOpen(false)
   }
+
   const modalHandler = async () => {
     console.log('I want to be a host')
     try {
@@ -44,7 +45,7 @@ const Navbar = () => {
 
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
-      <div className='py-4 border-b-[1px]'>
+      <div className='py-2 border-b-[1px]'>
         <Container>
           <div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
@@ -64,11 +65,11 @@ const Navbar = () => {
                 <div className='hidden md:block'>
                   {/* {!user && ( */}
                   <button
-                    // disabled={!user}
+                    disabled
                     onClick={() => setIsModalOpen(true)}
                     className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
                   >
-                    Host your home
+                    {/* Host your home */}
                   </button>
                   {/* )} */}
                 </div>

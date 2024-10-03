@@ -15,7 +15,7 @@ import HostMenu from './Menu/HostMenu'
 import AdminMenu from './Menu/AdminMenu'
 import GuestMenu from './Menu/GuestMenu'
 import ToggleBtn from '../../Shared/Button/ToggleBtn'
-import logo from '../../../assets/images/plane.jpg'
+import logo from '../../../assets/images/plane.png'
 
 
 const Sidebar = () => {
@@ -68,11 +68,11 @@ const Sidebar = () => {
             <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto'>
               <Link to='/'>
                 <img
-                  // className='hidden md:block'
+                  className='w-32 h-32'
                   src={logo}
                   alt='logo'
-                  width='80'
-                  height='60'
+                  // width='80'
+                  // height='60'
                 />
               </Link>
             </div>

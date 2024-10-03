@@ -61,7 +61,7 @@ const RoomDetails = () => {
                 gap-2
               '
                 >
-                  {/* <div>Hosted by {room?.host?.name}</div> */}
+                  <div>Hosted by {room?.host?.name}</div>
 
                   <img
                     className='rounded-full'
@@ -69,7 +69,7 @@ const RoomDetails = () => {
                     width='30'
                     alt='Avatar'
                     referrerPolicy='no-referrer'
-                    // src={room?.host?.image}
+                    src={room?.host?.image}
                   />
                 </div>
                 <div

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { TbCurrencyTaka } from "react-icons/tb";
+
 
 const Card = ({ room }) => {
   return (
@@ -34,9 +36,9 @@ const Card = ({ room }) => {
           ></div>
         </div>
         <div className='font-semibold text-lg'>{room?.location}</div>
-        <div className='font-light text-neutral-500'>5 nights .</div>
-        <div className='flex flex-row items-center gap-1'>
-          <div className='font-semibold'>$ {room?.price}</div>
+        {/* <div className='font-light text-neutral-500'>5 nights .</div> */}
+        <div className='flex items-center gap-1'>
+          <div className='font-semibold flex'> <TbCurrencyTaka className='text-xl' /> {room?.price}</div>
           <div className='font-light'>night</div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const Profile = () => {
   const { user, loading } = useAuth() || {}
   const [role, isLoading] = useRole()
 
-  console.log(user)
+  // console.log(user)
   if (isLoading || loading) return <LoadingSpinner />
   return (
     <div className='flex justify-center items-center h-screen'>
@@ -29,7 +29,7 @@ const Profile = () => {
             />
           </a>
 
-          <p className='p-2 uppercase px-4 text-xs text-white bg-pink-500 rounded-full'>
+          <p className='p-2 uppercase px-4 text-xs text-white bg-green-500 rounded-full'>
             {role}
           </p>
           <p className='mt-2 text-xl font-medium text-gray-800 '>
@@ -48,14 +48,14 @@ const Profile = () => {
                 <span className='font-bold text-black '>{user?.email}</span>
               </p>
 
-              <div>
+              {/* <div>
                 <button className='bg-[#02CE13] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                   Update Profile
                 </button>
                 <button className='bg-[#02CE13] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
                   Change Password
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
