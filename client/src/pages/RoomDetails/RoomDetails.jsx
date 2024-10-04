@@ -63,14 +63,15 @@ const RoomDetails = () => {
                 >
                   <div>Hosted by {room?.host?.name}</div>
 
-                  <img
+                  {/* <img
                     className='rounded-full'
                     height='30'
                     width='30'
                     alt='Avatar'
                     referrerPolicy='no-referrer'
                     src={room?.host?.image}
-                  />
+                  /> */}
+                  
                 </div>
                 <div
                   className='

@@ -268,8 +268,8 @@ async function run() {
     // delete a room
     app.delete('/room/:id', verifyToken, verifyHost, async (req, res) => {
       const id = req.params.id
-      // const query = { _id: new ObjectId(id) }
-      const query = {_id:id}
+      const query = { _id: new ObjectId(id) }
+      // const query = { _id: id }
       const result = await roomsCollection.deleteOne(query)
       res.send(result)
     })
@@ -277,11 +277,12 @@ async function run() {
     // Get a single room data from db using _id
     app.get('/room/:id', async (req, res) => {
       const id = req.params.id
-      // console.log(id);
-      // const query = { _id: new ObjectId(id) }
-      const query = { _id:id }
+      console.log(id);
+      const query = { _id: new ObjectId(id) }
+      // const query = { _id: id }
+      // console.log(query);
       const result = await roomsCollection.findOne(query)
-      console.log(result,"hello");
+      console.log(result, "hello");
       res.send(result)
     })
 
@@ -311,6 +312,8 @@ async function run() {
       const id = req.params.id
       const roomData = req.body
       const query = { _id: new ObjectId(id) }
+      // const query = { _id: id }
+
       const updateDoc = {
         $set: roomData,
       }
@@ -324,6 +327,8 @@ async function run() {
       const status = req.body.status
       // change room availability status
       const query = { _id: new ObjectId(id) }
+      // const query = { _id: id }
+
       const updateDoc = {
         $set: { booked: status },
       }
@@ -356,6 +361,7 @@ async function run() {
     app.delete('/booking/:id', verifyToken, async (req, res) => {
       const id = req.params.id
       const query = { _id: new ObjectId(id) }
+      // const query = { _id: id }
       const result = await bookingsCollection.deleteOne(query)
       res.send(result)
     })
