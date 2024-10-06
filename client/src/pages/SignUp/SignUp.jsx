@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { FcGoogle } from 'react-icons/fc'
+// import { FcGoogle } from 'react-icons/fc'
+import backgroundImage from '../../assets/images/login.jpg'
 import useAuth from '../../hooks/useAuth'
 // import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -10,7 +11,7 @@ const SignUp = () => {
   const navigate = useNavigate()
   const {
     createUser,
-    signInWithGoogle,
+    // signInWithGoogle,
     updateUserProfile,
     loading,
     setLoading,
@@ -44,20 +45,21 @@ const SignUp = () => {
   }
 
   // handle google signin
-  const handleGoogleSignIn = async () => {
-    try {
-      await signInWithGoogle()
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     await signInWithGoogle()
 
-      navigate('/')
-      toast.success('Signup Successful')
-    } catch (err) {
-      console.log(err)
-      toast.error(err.message)
-    }
-  }
+  //     navigate('/')
+  //     toast.success('Signup Successful')
+  //   } catch (err) {
+  //     console.log(err)
+  //     toast.error(err.message)
+  //   }
+  // }
 
   return (
-    <div className='flex justify-center items-center min-h-screen'>
+    <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', height: '100%' }}
+    className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
@@ -143,7 +145,7 @@ const SignUp = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <button
+        {/* <button
           disabled={loading}
           onClick={handleGoogleSignIn}
           className='disabled:cursor-not-allowed flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'
@@ -151,7 +153,7 @@ const SignUp = () => {
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>
-        </button>
+        </button> */}
         <p className='px-6 text-sm text-center text-gray-400'>
           Already have an account?{' '}
           <Link
